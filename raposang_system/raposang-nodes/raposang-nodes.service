@@ -1,0 +1,16 @@
+[Unit]
+Description=Launcher for the ROS master, parameter server and rosout logging node
+After=roscore-raposang.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+EnvironmentFile=/etc/default/roscore-raposang
+User=raposang
+Group=raposang
+Type=forking
+ExecStart=/home/raposang/catkin_ws/src/raposang/raposang_system/raposang-nodes/imu.sh
+ExecStartPos=/home/raposang/catkin_ws/src/raposang/raposang_system/raposang-nodes/bumblebee.sh
+Restart=always
+RestartSec=10

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+ <name>raposang_slippage</name>
+ <version>1.0.0</version>
+ <description>
+ Traction Detection in RAPOSA-NG: Normal; Stuck; Sliding
+ </description>
+
+ <license>GPLv3</license>
+
+ <author email="rute.s.luz@gmail.com">Rute Luz</author>
+ <maintainer email="rute.s.luz@gmail.com">Rute Luz</maintainer>
+
+ <buildtool_depend>catkin</buildtool_depend>
+
+ <build_depend>laser_scan_matcher</build_depend>
+ <build_depend>rospy</build_depend>
+
+ <run_depend>laser_scan_matcher</run_depend>
+ <run_depend>rospy</run_depend>
+</package>

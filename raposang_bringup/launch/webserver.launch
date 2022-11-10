@@ -1,0 +1,20 @@
+<launch>
+      <node name="webvideoserver" pkg="web_video_server" type="web_video_server" output="screen">
+            <param name="port" value="8080" />
+            <param name="address" value="192.168.0.250" />
+            <param name="server_threads" value="6" />
+            <param name="ros_threads" value="6"/>
+        <!--    <param name="width" value=""/>
+            <param name="height" value=""/>  -->
+            <param name="quality" value="100"/>
+            <param name="invert" value="false"/>
+            
+            <param name="type" value="vp8"/>
+<!--
+            <param name="bitrate" value="$(arg use_compression)"/>
+            <param name="qmin" value="$(arg topics_glob)"/>
+            <param name="qmax" value="$(arg services_glob)"/>
+            <param name="gop" value="$(arg params_glob)"/>
+            <param name="quality" value="realtime"/> -->
+      </node>
+</launch>

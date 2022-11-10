@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+import raposang_odometry_ros.raposang_odometry_node
+
+if __name__ == '__main__':
+ raposang_odometry_ros.raposang_odometry_node.main()

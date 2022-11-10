@@ -1,0 +1,34 @@
+<launch>
+  <include file="$(find raposang_tf)/launch/raposang_imu.launch">
+  	<!--<arg name="autocalibrate" value="false"/>-->
+  </include>
+
+  <include file="$(find idmind_sensorsboard)/launch/idmind_sensorsboard.launch"/>
+
+  <include file="$(find idmind_motorsboard)/launch/idmind_motorsboard.launch"/>
+
+  <include file="$(find idmind_herkulex)/launch/herkulex.launch"/>
+
+  <include file="$(find raposang_tf)/launch/raposang_tf.launch"/>
+
+  <include file="$(find raposang_odometry)/launch/raposang_odometry.launch"/>
+
+  <!-- Transforms IMU data pulished in frame imu on topics /imu to 
+  IMU data in frame base_link published on raposang/imu -->
+  <node pkg="raposang_laser_stabiliser" type="laser_stabilization.py" name="raposang_laser_stabilizer" output="screen"/>
+
+  <node pkg="urg_node" type="urg_node" name="raposang_laser"/>
+
+  <include file="$(find raposang_slam)/launch/raposang_slam.launch"/>
+
+  <!--<include file="$(find raposang_odometry)/launch/raposang_odometry.launch"/>  -->
+
+  <include file="$(find raposang_joy)/launch/raposang_joy_node.launch"/>
+
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
+
+  <include file="$(find pointgrey_camera_driver)/launch/bumblebee.launch"/>
+
+  <node pkg="usb_cam" type="usb_cam_node" name="raposang_usb_cam"/>
+    
+</launch>

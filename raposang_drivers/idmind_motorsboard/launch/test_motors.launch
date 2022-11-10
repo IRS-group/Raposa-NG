@@ -1,0 +1,6 @@
+<launch>
+   <node pkg="idmind_motorsboard" type="test_drivers.py" name="raposang_test_motors" output="screen">
+	<remap from="/idmind_motors/set_velocities"  to="/raposang/set_velocities"/>
+	<remap from="/idmind_motors/set_arm"         to="/raposang/set_arm"/>	   
+   </node>
+</launch>

@@ -1,0 +1,68 @@
+<robot name="raposang">
+  <link name="base_link" />
+  <link name="arm" />
+  <link name="depthcam_link" /> <!--realsense D345-->
+  <link name="bb2_support" />
+  <link name="bumblebee" />
+  <link name="back_camera" />
+  <link name="laser_support" />
+  <link name="laser" />
+  <link name="imu" />
+ 
+
+  <joint name="joint_arm" type="revolute">
+    <parent link="base_link"/>
+    <child link="arm"/>
+    <origin xyz="0.146 0 0" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="300" velocity="1000" lower="-0.575958653" upper="0.34906585" />
+  </joint>
+
+  <joint name="joint_realsense_D345" type="fixed">
+    <parent link="arm"/>
+    <child link="depthcam_link"/>
+    <origin xyz="0.235 0 0.035" rpy="0 0 0" />
+  </joint>  
+
+  <joint name="joint_pan" type="continuous">
+    <parent link="arm"/>
+    <child link="bb2_support"/>
+    <origin xyz="0.193 0 0.075" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+  </joint>
+
+  <joint name="joint_tilt" type="continuous">
+    <parent link="bb2_support"/>
+    <child link="bumblebee"/>
+    <origin xyz="0 0 0.078" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <joint name="joint_back_cam" type="fixed">
+    <parent link="bumblebee"/>
+    <child link="back_camera"/>
+    <origin xyz="0 0.025 0.033" rpy="0 0 3.14159265359" />
+  </joint>
+
+  <joint name="joint_imu" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu"/>
+    <origin xyz="-0.261 0.153 -0.038" rpy="0 3.14159265359 0" />
+  </joint>
+
+  <joint name="joint_pitch" type="revolute">
+    <parent link="base_link"/>
+    <child link="laser_support"/>
+    <origin xyz="-0.261 0 0.168" rpy="0 0 3.14159265359" />
+    <axis xyz="0 1 0" />
+    <limit effort="300" velocity="1000" lower="-1.57079633" upper="1.57079633" />
+  </joint>  
+
+  <joint name="joint_roll" type="revolute">
+    <parent link="laser_support"/>
+    <child link="laser"/>
+    <origin xyz="0.022 0 0.045" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit effort="300" velocity="1000" lower="-1.57079633" upper="1.57079633" />
+  </joint>  
+</robot>

@@ -1,0 +1,14 @@
+<launch>
+    <!-- Load configuration from YAML -->
+    <arg name="joy_config" default="gamepad" />
+    <arg name="config_filepath" default="$(find raposang_joy)/cfg/$(arg joy_config).yaml" />
+    <rosparam command="load" file="$(arg config_filepath)" />
+
+    <node pkg="raposang_joy" type="raposang_joy_node.py" name="raposang_joy_$(arg joy_config)" respawn="true" output="screen">
+        <!--<remap from="/joy" to=""/>-->
+	    <remap from="output_pantilt" to="/raposang/pantilt"/>
+	    <remap from="output_tracks" to="/raposang/tracks"/>
+	    <remap from="output_arm" to="/raposang/move_arm"/>
+    </node>
+
+</launch>

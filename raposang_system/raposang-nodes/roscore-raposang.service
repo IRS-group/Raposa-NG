@@ -1,0 +1,15 @@
+[Unit]
+Description=Launcher for the ROS master, parameter server and rosout logging node
+After=network.target
+After=network-online.target
+After=systemd-user-sessions.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=idle
+EnvironmentFile=/etc/default/roscore-raposang
+ExecStartPre=/bin/touch ${CMAKE_PREFIX_PATH}/.catkin
+ExecStart=/opt/ros/kinetic/bin/roscore -p $ROS_PORT
+Restart=always

@@ -1,0 +1,13 @@
+<launch>
+    <node pkg="idmind_sensorsboard" type="idmind_sensors.py" name="raposang_sensors" output="screen">
+        <param name="board" value="/dev/ttyUSBsensorboard" />
+        <remap from="/idmind_logging"         to="/raposang/sensors/logging"/>
+        <remap from="/idmind_sensors/lights"         to="/raposang/sensors/lights"/>
+        <remap from="/idmind_sensors/voltages"         to="/raposang/sensors/voltages"/>
+    </node>
+</launch>
+
+
+
+
+

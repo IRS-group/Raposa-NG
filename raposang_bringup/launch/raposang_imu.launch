@@ -1,0 +1,13 @@
+<launch>
+
+<!-- imu -->
+  <node pkg="microstrain_3dmgx2_imu" type="imu_node" name="microstrain_3dmgx2_node" respawn="true" output="screen">
+    <param name="time_offset" value="-0.040" />
+    <param name="port"  type="string" value="/dev/ttyUSBimu" />
+    <param name="autostart" type="bool" value="true" />
+    <param name="frame_id"  type="string" value="imu" />
+    <param name="autocalibrate" type="bool" value="false" />
+    <param name="angular_velocity_stdev" type="double" value="0.00017" />
+  </node>
+
+</launch>

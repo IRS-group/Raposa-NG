@@ -1,0 +1,10 @@
+# RAPOSA-NG Motors(tracks and herkulex) and Sensorboard
+KERNEL=="ttyUSB[0-9]*", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="board2", MODE="0666", SYMLINK="ttyUSBmotors" 
+KERNEL=="ttyUSB[0-9]*", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="board1", MODE="0666", SYMLINK="ttyUSBsensorboard" 
+KERNEL=="ttyUSB[0-9]*", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="board5", MODE="0666", SYMLINK="ttyUSBherku" 
+
+# Laser Hokuyo
+KERNEL=="ttyACM[0-9]*", SUBSYSTEMS=="usb", ATTRS{idVendor}=="15d1", ATTRS{idProduct}=="0000", MODE="0666", SYMLINK+="ttyUSBhokuyo"
+
+# IMU
+KERNEL=="ttyUSB[0-9]*", SUBSYSTEMS=="usb", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="4200-4670", MODE="0666", SYMLINK="ttyUSBimu" 

@@ -1,0 +1,14 @@
+[Unit]
+Description=Launcher for the ROS master, parameter server and rosout logging node
+After=roscore-raposang.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+EnvironmentFile=/etc/default/roscore-raposang
+User=raposang
+Group=raposang
+ExecStart=/home/raposang/catkin_ws/src/raposang/raposang_bringup/scripts/sensors.sh
+Restart=always
+RestartSec=10

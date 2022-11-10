@@ -1,0 +1,26 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"arm" [label="arm"];
+"bumblebee2" [label="bumblebee2"];
+"back_camera" [label="back_camera"];
+"realsense_D345" [label="realsense_D345"];
+"imu" [label="imu"];
+"laser_support" [label="laser_support"];
+"hokuyo" [label="hokuyo"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "joint_arm" [label="xyz: 0.146 0 0 \nrpy: 0 -0 0"]
+"joint_arm" -> "arm"
+"arm" -> "joint_bb2" [label="xyz: 0.193 0 0.17 \nrpy: 0 -0 0"]
+"joint_bb2" -> "bumblebee2"
+"bumblebee2" -> "joint_back_cam" [label="xyz: 0 0.025 0.033 \nrpy: 0 -0 -3.14159"]
+"joint_back_cam" -> "back_camera"
+"arm" -> "joint_realsense_D345" [label="xyz: 0.235 0 0.035 \nrpy: 0 -0 0"]
+"joint_realsense_D345" -> "realsense_D345"
+"base_link" -> "joint_imu" [label="xyz: -0.261 0.153 -0.038 \nrpy: -3.14159 -0 -3.14159"]
+"joint_imu" -> "imu"
+"base_link" -> "joint_laser_support" [label="xyz: -0.261 0 0.168 \nrpy: 0 -0 0"]
+"joint_laser_support" -> "laser_support"
+"laser_support" -> "joint_hokuyo" [label="xyz: -0.022 0 0.045 \nrpy: 0 -0 -3.14159"]
+"joint_hokuyo" -> "hokuyo"
+}

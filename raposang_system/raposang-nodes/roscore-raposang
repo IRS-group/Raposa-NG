@@ -1,0 +1,14 @@
+source /opt/ros/kinetic/setup.bash
+source /home/raposang/catkin_ws/devel/setup.bash
+
+ROS_ROOT=/opt/ros/kinetic/
+ROS_DISTRO=kinetic
+ROS_PACKAGE_PATH=/opt/ros/kinetic/share:/home/raposang/catkin_ws/src
+ROS_PORT=11311
+ROS_MASTER_URI=http://raposang:11311
+ROS_IP=192.168.0.250
+ROS_HOSTNAME=raposang
+CMAKE_PREFIX_PATH=/opt/ros/kinetic/
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/ros/kinetic/bin
+LD_LIBRARY_PATH=/opt/ros/kinetic/lib
+PYTHONPATH=/opt/ros/kinetic/lib/python2.7/dist-packages

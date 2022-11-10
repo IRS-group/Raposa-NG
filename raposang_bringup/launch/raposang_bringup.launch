@@ -1,0 +1,17 @@
+<launch>
+
+
+  <include file="$(find raposang_tf)/launch/raposang_imu.launch"/>
+  <include file="$(find idmind_motorsboard)/launch/idmind_motorsboard.launch"/>
+  <include file="$(find raposang_tf)/launch/raposang_tf.launch"/>
+  <include file="$(find pointgrey_camera_driver)/launch/bumblebee.launch"/>
+  <include file="$(find raposang_joy)/launch/raposang_joy_node.launch"/>
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch"/>
+  <include file="$(find raposang_odometry)/launch/raposang_odometry.launch"/>
+  <include file="$(find idmind_herkulex)/launch/herkulex.launch"/>
+
+  <!--node pkg="joy" type="joy_node" name="joy_node"/-->
+  <node pkg="urg_node" type="urg_node" name="raposang_laser"/>
+  <node pkg="raposang_laser_stabiliser" type="laser_stabilization.py" name="laser_stabilization"/>
+
+</launch>

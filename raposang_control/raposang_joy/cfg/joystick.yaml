@@ -1,0 +1,29 @@
+axes:
+  linear_vel: 1 #JY - Joystick up/down
+  angular_vel: 0 #JX - Joystick left/right
+  arm_pos: 2 #TS - Throttle stick up/down
+  stereo_cam_pan: 5 #HSX - Hat-switch/D-Pad left/right
+  stereo_cam_tilt: 6 #HSY - Hat-switch/D-Pad up/down
+    #3 JZ - Joystick yaw
+    #4 RD - Rudder yaw
+
+buttons:
+  turbo: 0 #R1 - Rapid Fire Trigger
+  slow: 2 #R3 - Joystick right index button
+  lights: 11  #ST - Start button
+  reset_stereo_pos: 3 #L3 - Joystick right thumb button
+  act_arm: 6 #TS7 - Throttle stick thumb 7 button
+  min_arm: 9 #L2 - Throttle stick index 10 button
+  max_arm: 8 #R2 - Throttle stick index 9 button
+  mid_arm: 4 #TS5 - Throttle stick thumb 5 button
+    #1 #L1 - Missile Trigger
+    #5 #TS6 - Throttle stick thumb 6 button
+    #7 #TS8 - Throttle stick thumb 8 button
+    #10  #SE - Select button
+    #11  #ST - Start button
+
+joy_arm_range:
+  min: -1.0 #minimum value the joy axis can have
+  max: 1.0  #maximum value the joy axis can have
+
+axes_range: 7

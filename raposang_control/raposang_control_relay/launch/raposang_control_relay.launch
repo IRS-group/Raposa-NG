@@ -1,0 +1,16 @@
+<launch>
+
+    <node pkg="raposang_control_relay" type="control_relay.py" name="raposang_control_relay" respawn="true" output="screen">
+        <remap from="/idmind_motors/set_arm"            to="/raposang/set_arm"/>
+        <remap from="/idmind_motors/set_velocities"     to="/raposang/set_velocities"/>
+        <remap from="/idmind_motors/arm"            to="/raposang/arm"/>
+        <remap from="/idmind_motors/motors/ticks"            to="/raposang/motors/ticks"/>
+        <remap from="/idmind_herkulex/set_torque"     to="/raposang/herkulex/set_torque"/>
+        <remap from="/idmind_herkulex/set_led"     to="/raposang/herkulex/set_led"/>
+        <remap from="/idmind_herkulex/send_motor_command"     to="/raposang/herkulex/send_motor_command"/>
+	<remap from="input_pantilt" to="/raposang/pantilt"/>
+        <remap from="input_arm" to="/raposang/move_arm"/>
+        <remap from="input_velocity" to="/raposang/tracks"/>
+   </node>
+
+</launch>

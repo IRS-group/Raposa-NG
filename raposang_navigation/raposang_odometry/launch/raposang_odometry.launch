@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+ <!-- small description about your node -->
+ 
+  <arg name="no_odometry" value="false"/>
+
+  <node unless="$(arg no_odometry)" pkg="raposang_odometry" name="raposang_odometry" type="raposang_odometry_node" respawn="true" output="screen">	 
+	  <remap from="input_odo"         to="/raposang/odometry"/>
+	  <remap from="output_pose"       to="/raposang/odometry_pose"/>
+	  <param name="publish_tf"        value="false" />	
+	  <param name="base_frame"        value="base_link" />	
+	  <param name="odom_frame"        value="odom" />
+	  <!-- This value is not the real dist between wheel, but an approximated value to get a good odometry -->
+    <!-- With the real 0.426 m, when the robot does one complete turn the odometry says one and half -->
+    <!-- A test to linear movement was done (3.0m) and odometry was correct-->
+    <param name="dist_between_tracks"   value="0.6"/>					
+  </node>
+</launch>

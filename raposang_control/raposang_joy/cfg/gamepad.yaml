@@ -1,0 +1,27 @@
+axes:
+  linear_vel: 1 #LJY - Left Joystick up/down
+  angular_vel: 0 #LJX - Left Joystick left/right
+  arm_pos: 3 #RJY - Right Joystick up/down
+  stereo_cam_pan: 4 #DPX - D-Pad left/right
+  stereo_cam_tilt: 5 #DPY - D-Pad up/down
+    #2 RJX - Right Joystick left/right
+
+buttons:
+  turbo: 4 #LB/L1/5 - Left Button
+  slow: 6 #LT/L2/7 - Left Trigger Button
+  lights: 3 #Y/Triangle/4 - Y Button
+  reset_stereo_pos: 0 #X/1 - X Button
+  min_arm: 7 #RT/R2/8 - Right Trigger Button
+  max_arm: 5 #RB/R1/6 - Right Button
+  mid_arm: 2 #B/3 - B Button
+    #1 #A/2 - A Button
+    #8 #ST/9 - Start Button
+    #9 #SL/10 - Select Button
+    #10  #LJB - Left Joystick Button
+    #11  #RJB - Right Joystick Button
+
+joy_arm_range:
+  min: 1.0 #minimum value the joy axis can have
+  max: -1.0  #maximum value the joy axis can have
+
+axes_range: 6

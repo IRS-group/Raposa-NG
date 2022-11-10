@@ -1,0 +1,11 @@
+<launch>
+    <include file="$(find idmind_herkulex)/launch/herkulex.launch" />
+    <node name="teleop" pkg="idmind_herkulex" type="teleop.py" >
+    	<remap from="/idmind_herkulex/motor_status"         to="/raposang/herkulex/motor_status"/>
+        <remap from="/idmind_herkulex/send_motor_command"   to="/raposang/herkulex/send_motor_command"/>
+        <remap from="/idmind_herkulex/set_led"              to="/raposang/herkulex/set_led"/>
+        <remap from="/idmind_herkulex/set_torque"           to="/raposang/herkulex/set_torque"/>
+    </node>
+    <node name="joy_node" pkg="joy" type="joy_node" />
+    
+</launch>

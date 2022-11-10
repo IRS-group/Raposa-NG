@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="image_view" type="stereo_view" name="stereo_image" respawn="true" output="screen">
+		<remap from="stereo" to="/"/>
+		<remap from="image" to="image_rect"/>
+	</node>
+</launch>

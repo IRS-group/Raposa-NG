@@ -1,0 +1,15 @@
+<launch>
+    <param name="robot_description" command="cat $(find raposang_description)/urdf/raposang.urdf" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true"/>
+    <node name="state_publisher" pkg="raposang_tf" type="state_publisher" respawn="true">
+    	<remap from="arm_angle"               to="/raposang/arm"/>
+		<remap from="herkulex_motor_status"    to="/raposang/herkulex/motor_status"/>
+		<remap from="input_imu"		to="/raposang/imu/data" />
+    </node>
+    <node name="laser_transform_publisher" pkg="raposang_tf" type="laser_transform_publisher.py" respawn="true">
+        <!-- <remap from="/imu/data"     to="/raposang/imu/data"/> -->
+    </node>		
+
+    <node name="transformed_imu_publisher" pkg="raposang_tf" type="transformed_imu_publisher.py" respawn="true">
+    </node>			
+</launch>

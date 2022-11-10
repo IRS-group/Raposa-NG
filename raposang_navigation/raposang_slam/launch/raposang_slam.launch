@@ -1,0 +1,39 @@
+<!--
+  Copyright 2016 The Cartographer Authors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+https://google-cartographer-ros.readthedocs.io/en/latest/ros_api.html#cartographer-node
+-->
+
+<launch>
+  <param name="robot_description"
+    textfile="$(find raposang_description)/urdf/raposang.urdf" />
+
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find raposang_slam)/config
+          -configuration_basename raposang_slam.lua"
+      respawn="true"
+      output="screen">
+<!--    <remap from="points2" to="/raposang/depth_cam/depth/color/points" />
+    <remap from="points2_2" to="vertical_laser_3d" />
+    <remap from="echoes" to="horizontal_laser_2d" />
+    <remap from="scan" to="horizontal_laser_2d" />
+    <remap from="scan" to="/base_scan" /> -->
+    <remap from="scan" to="/scan" />
+    <remap from="imu" to="/imu/data" />
+  </node>
+
+  <node name="map_to_image" pkg="map_to_img" type="MapToImage.py" output="screen"/>
+</launch>

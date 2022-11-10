@@ -1,0 +1,11 @@
+<launch>
+    <!-- Load configuration from YAML -->
+    <rosparam command="load" file="$(find idmind_herkulex)/cfg/idmind_herkulex.yaml" />
+
+    <node pkg="idmind_herkulex" type="node.py" name="raposang_herkulex" output="screen" >
+        <remap from="/idmind_herkulex/motor_status"         to="/raposang/herkulex/motor_status"/>
+        <remap from="/idmind_herkulex/send_motor_command"   to="/raposang/herkulex/send_motor_command"/>
+        <remap from="/idmind_herkulex/set_led"              to="/raposang/herkulex/set_led"/>
+        <remap from="/idmind_herkulex/set_torque"           to="/raposang/herkulex/set_torque"/>
+    </node>
+</launch>

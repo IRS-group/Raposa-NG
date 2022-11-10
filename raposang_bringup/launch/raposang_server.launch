@@ -1,0 +1,21 @@
+<launch>
+  <include file="$(find raposang_bringup)/launch/raposang_sensorsboard.launch"/>
+
+  <include file="$(find raposang_bringup)/launch/raposang_motorsboard.launch"/>
+
+  <include file="$(find raposang_bringup)/launch/raposang_herkulex.launch"/>
+
+  <include file="$(find raposang_bringup)/launch/raposang_rs_camera.launch"/>
+
+  <include file="$(find raposang_bringup)/launch/raposang_bumblebee.launch"/>
+
+  <include file="$(find raposang_bringup)/launch/raposang_usb_cam.launch"/>
+  
+  <include file="$(find raposang_tf)/launch/raposang_tf.launch"/> 
+
+
+<!--
+  <include file="$(find raposang_tf)/launch/raposang_imu.launch"> -->
+    <!--<arg name="autocalibrate" value="false"/>
+  </include>    -->
+</launch>

@@ -1,0 +1,9 @@
+roscd <launch>
+
+	<include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+		<param name="port" value="9090"/>
+		<param name="bson_only_mode" value="True"/>
+	</include>
+
+	<node name="file_server" pkg="file_server" type="file_server" output="screen"/>false	
+</launch>

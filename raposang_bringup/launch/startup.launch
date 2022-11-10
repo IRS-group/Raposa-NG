@@ -1,0 +1,24 @@
+<launch>
+  <arg name="node_start_delay" default="2.0" />  
+
+  <include file="$(find raposang_bringup)/launch/raposang_sensorsboard.launch" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+
+  <include file="$(find raposang_bringup)/launch/raposang_motorsboard.launch" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+
+  <include file="$(find raposang_bringup)/launch/raposang_herkulex.launch" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+
+   <include file="$(find raposang_bringup)/launch/raposang_rs_camera.launch" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+
+   <include file="$(find raposang_bringup)/launch/raposang_bumblebee.launch" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+
+   <include file="$(find raposang_bringup)/launch/raposang_usb_cam.launch" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' "/>
+   
+
+
+<!--
+  <include file="$(find raposang_tf)/launch/raposang_tf.launch"/>
+
+  <include file="$(find raposang_tf)/launch/raposang_imu.launch"> -->
+    <!--<arg name="autocalibrate" value="false"/>
+  </include>    -->
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+	<param name="/idmind_sensors/board" value="/dev/ttyUSBsensorboard" />
+
+    <node pkg="idmind_sensorsboard" type="idmind_sensors.py" name="raposang_sensors" respawn="true" output="screen">
+        <remap from="idmind_logging"          to="raposang/sensors/logging"/>
+        <remap from="idmind_sensors/lights"   to="raposang/sensors/lights"/>
+        <remap from="idmind_sensors/voltages" to="raposang/sensors/voltages"/>        
+    </node>
+</launch>
